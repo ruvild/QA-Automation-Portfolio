@@ -50,9 +50,11 @@ Automated routine maintenance tasks for banking client environments.
 * **ETL Robustness:** (As shown in Figure 2) The pipeline includes built-in error handling that identifies missing or disconnected data sources, ensuring the dashboard only reflects verified, loaded information.
 
 ![Dashboard Overview](images/Dashboard.png)
+
 *Figure 1: Performance tracking dashboard showing capital allocation fetched from the aformentioned JSON files.*
 
 ![ETL Data Flow](images/Data_Flow.png)
+
 *Figure 2: Power Query architecture demonstrating the merger of multiple API streams (MEXC, Pionex, CoinGecko) into a unified data model.*
 
 > **Note on Pipeline Robustness:** Figure 2 illustrates the system's error-handling state. The "Not Loaded" indicators demonstrate the system's ability to identify and flag missing local data sources without compromising the integrity of the existing dataset.
