@@ -56,5 +56,3 @@ Automated routine maintenance tasks for banking client environments.
 ![ETL Data Flow](images/Data_Flow.png)
 
 *Figure 2: Power Query architecture demonstrating the merger of multiple API streams (MEXC, Pionex, CoinGecko) into a unified data model.*
-
-> **Note on Pipeline Robustness:** Figure 2 illustrates the system's error-handling state. The "Not Loaded" indicators demonstrate the system's ability to identify and flag missing local data sources without compromising the integrity of the existing dataset.
