@@ -1,3 +1,5 @@
+**[Читать на русском](README_RU.md)**
+
 # SDET Portfolio: Automation, API Integration & SQL Analytics
 
 This repository showcases my transition into Software Development Engineer in Test (SDET) roles, focusing on infrastructure automation, secure API handling, and data-driven testing strategies.
