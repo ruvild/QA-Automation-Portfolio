@@ -1,4 +1,4 @@
-**[Читать на русском](README_RU.md)**
+[![Russian](https://img.shields.io/badge/Language-Русский-blue?style=flat-square)](README_RU.md)
 
 # SDET Portfolio: Automation, API Integration & SQL Analytics
 
