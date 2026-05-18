@@ -8,12 +8,13 @@ This repository showcases my transition into Software Development Engineer in Te
 
 **Status:** Work in Progress (WIP)
 This repository is actively updated as I expand my automated testing portfolio. 
-* **Upcoming Feature:** Integration of **Playwright** for end-to-end (E2E) web testing.
+* **Upcoming Feature:** Transitioning **Playwright** scripts into a scalable **Page Object Model (POM)** architecture, incorporating reusable **Pytest Fixtures**, and adding **API testing** coverage. Integration of end-to-end (E2E) web testing. 
 * **Upcoming Feature:** Automated CI/CD pipelines using GitHub Actions for the Python test suite.
 
 ## 📁 Project Structure
 
 * **`python/`**: API clients for MEXC and Pionex, logic testing, and OOP-based user management.
+* **`python/playwright_practice/`**: UI testing mechanics (handling dynamic elements, iframes, complex table pagination and more).
 * **`automation-scripts/`**: PowerShell scripts for automated system maintenance and client-side operations.
 * **`sql-analytics/`**: Complex SQL queries utilizing CTEs and Window Functions for data validation.
 * **`images/`**: Architectural visualizations.
