@@ -171,9 +171,9 @@ def test_exit_intent(page: Page):
     expect(modal).to_be_hidden()
 
 
-def test_file_donwload(page: Page):
+def test_file_download(page: Page):
     page.goto('https://the-internet.herokuapp.com/download')
-    file_path = "C:/Users/Admin/Documents/mypy/playwright/gems"
+    file_path = f'{os.getcwd()}/downloads'
     with page.expect_download() as download_info:
         page.get_by_text('some-file.txt').click()
     download = download_info.value
@@ -185,7 +185,7 @@ def test_file_upload(page: Page):
     page.goto('https://the-internet.herokuapp.com/upload')
     page.set_input_files(
         'input[id=file-upload]',
-        'C:/Users/Admin/Documents/mypy/playwright/gems/some-file.txt',
+        f'{os.getcwd()}/downloads/some-file.txt',
     )
     page.get_by_role('button', name='upload').click()
     expect(page.get_by_text('File Uploaded!')).to_be_visible()
@@ -312,7 +312,7 @@ def test_inputs(page: Page):
 
 def test_jquery(page: Page):
     page.goto('https://the-internet.herokuapp.com/jqueryui/menu')
-    file_path = "C:/Users/Admin/Documents/mypy/playwright/gems"
+    file_path = f'{os.getcwd()}/downloads'
     page.get_by_role('link', name='Enabled').hover()
     page.get_by_text('Downloads').hover()
     with page.expect_download() as download_info:
@@ -439,9 +439,9 @@ def test_redirection(page: Page):
 
 def test_secure_file_download(page: Page):
     page.goto('https://admin:admin@the-internet.herokuapp.com/download_secure')
-    file_path = "C:/Users/Admin/Documents/mypy/playwright/gems"
+    file_path = f"{os.getcwd()}/downloads"
     with page.expect_download() as download_info:
-        page.get_by_role('link', name='test.txt', exact=True).click()
+        page.get_by_role('link', name=re.compile('some-file.txt'), exact=True).click()
     download = download_info.value
     download.save_as(os.path.join(file_path, download.suggested_filename))
     assert os.path.isfile(os.path.join(file_path, download.suggested_filename))
@@ -470,16 +470,14 @@ def test_slow_resources(page: Page):
 def test_sortable_tables(page: Page):
 
     def _get_column():
-        return page.locator('table#table1 tbody tr td:nth-child(1)').all_inner_texts()
+        return page.locator('table#table1 tbody tr td:nth-child(1)')
 
     page.goto('https://the-internet.herokuapp.com/tables')
-    unsorted_last_name = _get_column()
+
+    unsorted_last_name = _get_column().all_inner_texts()
     manually_sorted = sorted(unsorted_last_name)
-    # Wait until the first cell in the body is not empty
-    page.locator('table#table1 tbody tr td').first.wait_for(state="visible")
-    page.locator('#table1').get_by_text('Last Name').click(force=True)
-    auto_sorted = _get_column()
-    assert manually_sorted == auto_sorted
+    page.locator('#table1').get_by_text('Last Name').click()
+    expect(_get_column()).to_have_text(manually_sorted)
 
 
 def test_status_codes(page: Page):
