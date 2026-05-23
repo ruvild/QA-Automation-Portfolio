@@ -15,6 +15,7 @@ This repository is actively updated as I expand my automated testing portfolio.
 
 * **`python/`**: API clients for MEXC and Pionex, logic testing, and OOP-based user management.
 * **`python/playwright-practice/`**: UI automation scripts demonstrating iframe handling, dynamic scrolling, and more.
+* **`python/selenium-practice/`**: UI automation scripts using Page Object Model (POM) architecture, pytest fixtures and parametrization with robust explicit synchronization and decoupled assertions.
 * **`automation-scripts/`**: PowerShell scripts for automated system maintenance and client-side operations.
 * **`sql-analytics/`**: Complex SQL queries utilizing CTEs and Window Functions for data validation.
 * **`images/`**: Architectural visualizations.
@@ -36,7 +37,7 @@ Demonstrated the use of creational and behavioral patterns to build scalable tes
 * **Test Orchestration & Validation:** Developed `TestManager.py` to process test results, filter "Passed" states from JSON data, and manage the output of the testing suite. 
 * **OOP Principles:** Focused on encapsulation and inheritance to ensure that the testing logic remains maintainable as the project grows.
 
-### 3. Web UI Automation (Playwright & Python)
+### 3. Web UI Automation (Playwright, Selenium & Python)
 Practicing core interface automation mechanics on complex, dynamic web applications (Heroku-app, dynamic tables).
 
 * **Synchronization & Stability:** Mastered conditional looping for infinite scroll mechanics and built-in auto-waiting to handle flaky, asynchronous page loads.
