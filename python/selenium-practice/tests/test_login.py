@@ -1,6 +1,4 @@
 import pytest
-from pages.login_page import LoginPage
-from selenium.webdriver.support import expected_conditions as EC
 
 @pytest.mark.parametrize(
     "username, password, expected_error",
@@ -31,20 +29,14 @@ from selenium.webdriver.support import expected_conditions as EC
         ),
     ],
 )
-def test_login_negative(driver, username, password, expected_error):
 
-    login_page = LoginPage(driver)
-    login_page.open()
+def test_login_negative(login_page, username, password, expected_error):
+
     login_page.login_as(username, password)
-    actual_error = login_page.get_error_message()
-    assert actual_error == expected_error
+    assert login_page.get_error_message() == expected_error
 
-def test_login_positive(driver):
+def test_login_positive(login_page):
 
-    login_page = LoginPage(driver)
-    login_page.open()
-    inventory_page = login_page.login_as('standard_user','secret_sauce')
-    
+    inventory_page = login_page.login_as('standard_user','secret_sauce')    
     assert inventory_page.get_current_url().endswith(inventory_page.PATH)
-    visible_items = inventory_page.wait.until(EC.visibility_of_all_elements_located(inventory_page.inventory_items))
-    assert len(visible_items) > 0
+    assert len(inventory_page.get_inventory_items()) > 0

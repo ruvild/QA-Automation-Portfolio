@@ -3,6 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
 from selenium.webdriver.edge.options import Options as EdgeOptions
+from pages.login_page import LoginPage
 
 
 def pytest_addoption(parser):
@@ -48,3 +49,10 @@ def driver(request):
 
     yield driver
     driver.quit()
+
+@pytest.fixture()
+def login_page(driver):
+    """Instantiates the login page and opens it automatically."""
+    page = LoginPage(driver)
+    page.open()
+    return page

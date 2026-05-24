@@ -14,4 +14,5 @@ class InventoryPage(BasePage):
         self.wait.until(EC.url_contains(self.PATH))
         return self.driver.current_url
     
-
+    def get_inventory_items(self):
+        return self.wait.until(EC.visibility_of_all_elements_located(self.inventory_items))
