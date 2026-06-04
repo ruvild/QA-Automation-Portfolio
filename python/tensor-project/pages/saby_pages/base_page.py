@@ -26,6 +26,7 @@ class BasePage(MainBasePage):
     def go_to_contacts_via_header(self):
         from pages.saby_pages.contacts_page import ContactsPage
 
+        self.contacts_header.should(be.clickable)
         self.contacts_header.hover()
         self.contacts_offices.click()
         return ContactsPage(self.browser)
