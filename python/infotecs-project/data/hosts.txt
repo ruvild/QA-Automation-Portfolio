@@ -1,0 +1,4 @@
+google.com
+https://ya.ru
+https://mock.httpstatus.io/401
+https://nonexistent.domain
