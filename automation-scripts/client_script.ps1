@@ -4,7 +4,7 @@ $inCryModDir = "C:\temp"
 $processName = "CryptoModule"
 $processName1 = "javaw"
 
-$banner = "=== GAZPROMBANK MODULE REINSTALLATION ==="
+$banner = "=== MODULE REINSTALLATION ==="
 $width = [console]::WindowWidth
 $padding = ($width - $banner.Length) / 2
 Write-Host (" " * $padding) -NoNewline

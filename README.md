@@ -1,69 +1,90 @@
-[![Russian](https://img.shields.io/badge/Language-Русский-blue?style=flat-square)](README_RU.md)
+# 🧪 QA Automation Learning Repository
 
-# SDET Portfolio: Automation, API Integration & SQL Analytics
+> ⭐ Основной проект автоматизации тестирования:
+>
+> **PrestaShop QA Automation Suite**  
+> https://github.com/ruvild/prestashop-qa
+>
+> Полноценный проект с UI-, API- и гибридными сценариями тестирования, контейнеризированным тестовым окружением, Page Object Model, API-клиентами, валидацией данных и CI/CD через GitHub Actions.
 
-This repository showcases my transition into Software Development Engineer in Test (SDET) roles, focusing on infrastructure automation, secure API handling, and data-driven testing strategies.
+Репозиторий содержит учебные проекты, практические задания и эксперименты, выполненные в процессе изучения автоматизации тестирования.
 
-## 🚧 Project Status & Roadmap
-
-**Status:** Work in Progress (WIP)
-This repository is actively updated as I expand my automated testing portfolio. 
-* **Upcoming Feature:** Transitioning **Playwright** scripts into a scalable **Page Object Model (POM)** architecture, incorporating reusable **Pytest Fixtures**, and adding **API testing** coverage. Integration of end-to-end (E2E) web testing. 
-* **Upcoming Feature:** Automated CI/CD pipelines using GitHub Actions for the Python test suite.
-
-## 📁 Project Structure
-
-* **`python/`**: API clients for MEXC and Pionex, logic testing, and OOP-based user management.
-* **`python/playwright-practice/`**: UI automation scripts demonstrating iframe handling, dynamic scrolling, and more.
-* **`python/selenium-practice/`**: UI automation scripts using Page Object Model (POM) architecture, pytest fixtures and parametrization with robust explicit synchronization and decoupled assertions.
-* **`automation-scripts/`**: PowerShell scripts for automated system maintenance and client-side operations.
-* **`sql-analytics/`**: Complex SQL queries utilizing CTEs and Window Functions for data validation.
-* **`images/`**: Architectural visualizations.
+В отличие от отдельных законченных проектов, данный репозиторий отражает процесс обучения и содержит примеры изучения различных инструментов, подходов и технологий тестирования.
 
 ---
 
-## 🚀 Key Projects
+## 🛠️ Технологический стек
 
-### 1. Automated API Clients (Python)
-Developed modular clients to interface with cryptocurrency exchanges (MEXC, Pionex).
-
-* **Security:** Integrated `python-dotenv` for secure credential management, ensuring zero exposure of API keys.
-* **Data Normalization:** Designed logic to save JSON responses locally for downstream analysis.
-
-### 2. Design Patterns & Logic Testing
-Demonstrated the use of creational and behavioral patterns to build scalable test architectures.
-
-* **User Management (Factory Pattern):** Utilized `UserFactory.py` to handle the creation of user objects and their associated permission levels, ensuring a clean separation between data setup and test execution.
-* **Test Orchestration & Validation:** Developed `TestManager.py` to process test results, filter "Passed" states from JSON data, and manage the output of the testing suite. 
-* **OOP Principles:** Focused on encapsulation and inheritance to ensure that the testing logic remains maintainable as the project grows.
-
-### 3. Web UI Automation (Playwright, Selenium & Python)
-Practicing core interface automation mechanics on complex, dynamic web applications (Heroku-app, dynamic tables).
-
-* **Synchronization & Stability:** Mastered conditional looping for infinite scroll mechanics and built-in auto-waiting to handle flaky, asynchronous page loads.
-* **Complex UI Components:** Automated interactions with isolated `iframe` elements and synchronized state validation for paginated data tables (handling elements per page, searching, and entry tracking).
-* **Architecture Roadmap:** Currently transitioning these scripts from one-off functional tests into a structured Page Object Model (POM) architecture with reusable Pytest fixtures.
-
-### 4. Infrastructure Automation (PowerShell)
-Automated routine maintenance tasks for banking client environments.
-
-* **Efficiency:** Achieved significant time reduction by automating manual file checks and silent installations.
-* **Reliability:** Integrated error-handling logs to monitor script execution.
+- Python
+- Pytest
+- Playwright
+- Selenium
+- Requests
+- SQL
 
 ---
 
-## 📊 Data Integration & Visualization
+## 📂 Структура репозитория
 
-* **Semi-Automated Tracking:** Designed to automatically refresh and track delta changes every time the Python API clients update the local JSON repositories.
+```text
+qa-learning-lab/
+├── automation-scripts/       # Скрипты автоматизации рабочих процессов и вспомогательных задач
+├── python/
+│   ├── api-practice/         # Практика работы с API и получения данных
+│   ├── oop-logic-practice/   # Практика Python, ООП и логики программирования
+│   ├── playwright-practice/  # Изучение Playwright
+│   └── selenium-practice/    # Изучение Selenium и Page Object Model
+├── assignments/              # Практические задания в рамках отбора и обучения
+└── sql-analytics/            # Практика работы с SQL и анализом данных
+```
 
-* **Verification Engine:** Serves as a "Source of Truth" to verify that raw data remains consistent across updates, allowing for immediate visual regression testing of the portfolio state.
+## 📚 Содержание
 
-* **ETL Robustness:** (As shown in Figure 2) The pipeline includes built-in error handling that identifies missing or disconnected data sources, ensuring the dashboard only reflects verified, loaded information.
+### 🖥️ UI Automation
 
-![Dashboard Overview](images/Dashboard.png)
+Примеры автоматизации пользовательских сценариев с использованием Selenium и Playwright:
 
-*Figure 1: Performance tracking dashboard showing capital allocation fetched from the aformentioned JSON files.*
+- Page Object Model
+- Работа с локаторами
+- Взаимодействие с элементами страницы
+- Проверки UI-состояний
+- Организация структуры тестов
 
-![ETL Data Flow](images/Data_Flow.png)
+### 🔌 API Practice
 
-*Figure 2: Power Query architecture demonstrating the merger of multiple API streams (MEXC, Pionex, CoinGecko) into a unified data model.*
+Практика использования REST API:
+
+- HTTP-запросы через requests
+- Работа с JSON-ответами
+- Получение и обработка данных
+- Работа с тестовыми данным
+
+### 🗄️ SQL и анализ данных
+
+Учебные задачи по:
+
+- Написанию SQL-запросов
+- Фильтрации и агрегации данных
+- Анализу полученных результатов
+
+### 📝 Практические задания
+
+В папке `assignments` находятся обезличенные технические задания, выполненные в процессе обучения и поиска работы.
+
+Они сохранены как примеры решения практических задач и демонстрация подхода к разработке тестов.
+
+---
+
+## 🚀 Основной проект
+
+Более крупный и структурированный проект автоматизации находится в отдельном репозитории [prestashop-qa](https://github.com/ruvild/prestashop-qa).
+
+
+В проекте реализованы:
+
+- контейнеризированное окружение PrestaShop + MySQL;
+- UI, API и гибридные сценарии тестирования;
+- Page Object Model;
+- API-клиенты и схемы валидации данных;
+- автоматическая подготовка тестового окружения;
+- запуск тестов в GitHub Actions CI/CD.
